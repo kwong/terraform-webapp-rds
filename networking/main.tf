@@ -102,3 +102,15 @@ resource "aws_security_group" "sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+## db network
+
+resource "aws_db_subnet_group" "db_sn_group" {
+  name = "rds_sn_group"
+  subnet_ids = aws_subnet.private_subnet[*].id
+
+  tags = {
+    Name = "rds_sn_group"
+  }
+}
+
