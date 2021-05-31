@@ -10,6 +10,12 @@ locals {
           protocol    = "tcp"
           cidr_blocks = ["0.0.0.0/0"]
         }
+        ssh = {
+          from        = 22
+          to          = 22
+          protocol    = "tcp"
+          cidr_blocks = ["0.0.0.0/0"]
+        }
       }
     }
     rds = {
